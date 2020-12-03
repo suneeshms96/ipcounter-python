@@ -1,39 +1,38 @@
 # ipcounter-python
 A python program to count the IP connections and display it as graph
 
+    import matplotlib.pyplot as plt
 
-import matplotlib.pyplot as plt
+    logfile = 'access.log'
+    hit_count = 500
 
-logfile = 'access.log'
-hit_count = 500
+    with open (logfile) as logobj:
 
-with open (logfile) as logobj:
-
-    hit_counter = {}
+        hit_counter = {}
     
-    for line in logobj:
+        for line in logobj:
     
-        ip = line.split()[0]
+            ip = line.split()[0]
         
-        if ip not in hit_counter:
+            if ip not in hit_counter:
         
-            hit_counter[ip] = 1
+                hit_counter[ip] = 1
             
-        else:
+            else:
         
-            hit_counter[ip] = hit_counter[ip] + 1
+                hit_counter[ip] = hit_counter[ip] + 1
+            
+     for ip in hit_counter:
 
- for ip in hit_counter:
-
-    hit = hit_counter[ip]
+        hit = hit_counter[ip]
     
-    ips = ip
+        ips = ip
     
-    hits = hit
+        hits = hit
     
-    if hit >= hit_count:
+        if hit >= hit_count:
     
-        print('{:20} {}'.format(ip,hit))
+            print('{:20} {}'.format(ip,hit))
         
-        plt.bar(ips, hits)
+            plt.bar(ips, hits)
 
