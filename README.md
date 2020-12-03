@@ -23,7 +23,7 @@ with open (logfile) as logobj:
         
             hit_counter[ip] = hit_counter[ip] + 1
 
-for ip in hit_counter:
+ for ip in hit_counter:
 
     hit = hit_counter[ip]
     
