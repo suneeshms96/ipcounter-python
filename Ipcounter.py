@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 
-
 logfile = 'access.log'
 hit_count = 500
 
@@ -19,3 +18,19 @@ with open (logfile) as logobj:
         else:
 
             hit_counter[ip] = hit_counter[ip] + 1
+
+
+for ip in hit_counter:
+
+    hit = hit_counter[ip]
+
+    ips = ip
+
+    hits = hit
+
+    if hit >= hit_count:
+
+        print('{:20} {}'.format(ip,hit))
+
+        plt.bar(ips, hits)
+
