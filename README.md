@@ -36,3 +36,5 @@ A python program to count the IP connections and display it as graph
         
             plt.bar(ips, hits)
 
+
+![pthon-graph](https://user-images.githubusercontent.com/67421355/112343033-c3c98f80-8ce8-11eb-893c-aa2e71d474f8.jpeg)
